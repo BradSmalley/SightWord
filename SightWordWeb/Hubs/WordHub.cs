@@ -13,6 +13,9 @@ namespace SightWordWeb.Hubs
             _testWordList.Add(new Word("One"));
             _testWordList.Add(new Word("Two"));
             _testWordList.Add(new Word("Three"));
+            _testWordList.Add(new Word("Four"));
+            _testWordList.Add(new Word("Five"));
+            _testWordList.Add(new Word("Six"));
         }
 
         public WordHub()
@@ -27,7 +30,7 @@ namespace SightWordWeb.Hubs
             // Find word list by name and send the first word from a random order.
 
 
-            await Clients.All.SendAsync("ReceiveWord", "word");
+            await Clients.All.SendAsync("ReceiveWord", _currentWordList.First(w => !w.IsCorrectlyAnswered));
         }
 
         public async Task UpdateWordStatus(string word, string status)

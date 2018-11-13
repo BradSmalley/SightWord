@@ -14,7 +14,15 @@ namespace SightWordWeb.Models
 
         public Word GetNextWord() {
             // Randomize this - OR - create a random implementation
-            return this.First(w => !w.IsCorrectlyAnswered);
+
+            var incompleteWords = this.Where(w => !w.IsCorrectlyAnswered).ToArray();
+            var count = incompleteWords.Count();
+
+            var random = new Random(DateTime.Now.Millisecond);
+            var randomIndex = random.Next(0, count - 1);
+
+
+            return incompleteWords[randomIndex];
         }
     }
 }
