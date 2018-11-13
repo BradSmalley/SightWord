@@ -41,7 +41,6 @@ namespace SightWordWeb
             }
             else
             {
-
                 app.UseExceptionHandler("/Home/Error");
             }
 
