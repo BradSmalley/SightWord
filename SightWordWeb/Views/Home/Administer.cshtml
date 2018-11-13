@@ -1,0 +1,26 @@
+﻿@page
+@{
+    ViewData["Title"] = "Administer Word List";
+}
+
+<div class="container">
+    <div id="feedback"></div>
+    <div class="row">
+        <div class="col-md-2">
+            <h1>Current Word:</h1>
+        </div>
+        <div class="col-md-10">
+            <h2 id="currentWord"></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">&nbsp;</div>
+        <div class="col-6">
+            <input type="button" id="correctButton" value="Correct" class="btn btn-success" />
+            <input type="button" id="incorrectButton" value="Incorrect" class="btn" btn-danger" />
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/administer.js"></script>
