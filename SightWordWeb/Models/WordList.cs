@@ -6,6 +6,9 @@ namespace SightWordWeb.Models
 {
     public class WordList<T> : List<T> where T : Word
     {
+
+        public string Name { get; set; }
+
         public bool IsComplete { 
             get {
                 return !this.Any(w => !w.IsCorrectlyAnswered);

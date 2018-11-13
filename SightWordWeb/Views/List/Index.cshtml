@@ -1,0 +1,29 @@
+﻿@model SightWordWeb.ViewModels.List.ListIndexViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var list in Model.WordLists) {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id= list.Name }) |
+                @Html.ActionLink("Details", "Details", new { list.Name }) |
+                @Html.ActionLink("Delete", "Delete", new { list.Name })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

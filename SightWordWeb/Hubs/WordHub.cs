@@ -3,23 +3,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 using SightWordWeb.Models;
 using System.Linq;
+using System.Threading;
 
 namespace SightWordWeb.Hubs
 {
     public class WordHub : Hub
     {
-
-        static WordHub() {
+        public WordHub()
+        {
             _testWordList.Add(new Word("One"));
             _testWordList.Add(new Word("Two"));
             _testWordList.Add(new Word("Three"));
             _testWordList.Add(new Word("Four"));
             _testWordList.Add(new Word("Five"));
             _testWordList.Add(new Word("Six"));
-        }
 
-        public WordHub()
-        {
+
             _currentWordList = _testWordList;
         }
 
