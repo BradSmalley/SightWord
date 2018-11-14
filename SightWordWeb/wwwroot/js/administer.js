@@ -1,6 +1,7 @@
 ﻿"use strict";
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/WordHub").build();
+var reviewerConnId;
 
 connection.on("ReceiveWord", function (word) {
     console.log(word);
@@ -17,12 +18,20 @@ connection.on("WordListComplete", function() {
     feedbackDiv.append(h2);
 })
 
-
-
-connection.start().catch(function (err) {
-    return console.error(err.toString());
+connection.on("ConnectionSuccess", function () {
+    connection.invoke("RegisterAsReviewer");
 });
 
+connection.on("Registered", function (connId) {
+    $('#ReviewerConnectionId').text(connId);
+    reviewerConnId = connId;
+});
+
+connection.on("ClientConnected", function (connId) {
+    alert(connId);
+})
+
+connection.start().catch(function (err) { return console.error(err.toString()); });
 
 
 document.getElementById("start").addEventListener("click", function (event) {

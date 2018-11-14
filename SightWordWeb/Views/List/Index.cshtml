@@ -19,9 +19,12 @@
 @foreach (var list in Model.WordLists) {
         <tr>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id= list.Name }) |
-                @Html.ActionLink("Details", "Details", new { list.Name }) |
-                @Html.ActionLink("Delete", "Delete", new { list.Name })
+                @list.Name
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = list.Name }) |
+                @Html.ActionLink("Details", "Details", new { id = list.Name }) |
+                @Html.ActionLink("Delete", "Delete", new { id = list.Name })
             </td>
         </tr>
 }

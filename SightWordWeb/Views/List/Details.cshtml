@@ -1,0 +1,22 @@
+﻿@model SightWordWeb.ViewModels.List.DetailsWordListViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>@Model.WordList.Name</h4>
+    <hr />
+    <ul>
+        @foreach (var word in Model.WordList)
+        {
+            <li>@word.Value</li>    
+        }
+    </ul>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WordList.Name }) |
+    <a asp-action="Index">Back to List</a>
+</div>

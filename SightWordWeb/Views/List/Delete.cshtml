@@ -1,0 +1,24 @@
+﻿@model SightWordWeb.ViewModels.List.DeleteWordListViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>@Model.WordList.Name</h4>
+    <hr />
+    <ul class="dl-horizontal">
+        @foreach (var word in Model.WordList)
+        {
+            <li>@word.Value</li>
+        }
+    </ul>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Folder Include="Hubs\" />
+    <Folder Include="wwwroot\image\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Hubs\EmptyClass.cs" />

@@ -14,6 +14,9 @@ namespace SightWordWeb
 {
     public class Startup
     {
+
+        public static string ReviewerId;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -59,7 +62,7 @@ namespace SightWordWeb
 
     public class MyService 
     {
-        public WordList<Word> TestWordList = new WordList<Word>();
+        public WordList TestWordList = new WordList();
 
         public MyService()
         {

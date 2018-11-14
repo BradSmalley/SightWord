@@ -18,5 +18,10 @@ namespace SightWordWeb.Models
 
         public bool IsCorrectlyAnswered { get; set; }
 
+        public override string ToString()
+        {
+            return this.Value;
+        }
+
     }
 }

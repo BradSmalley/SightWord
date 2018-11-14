@@ -11,11 +11,11 @@ namespace SightWordWeb.ViewModels.List
 
         public ListIndexViewModel()
         {
-            WordLists = new List<WordList<Word>>();
+            WordLists = new List<WordList>();
         }
 
 
-        public IList<WordList<Word>> WordLists { get; set; }
+        public IList<WordList> WordLists { get; set; }
 
 
     }
